@@ -12,6 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'nokogiri'
+gem 'sysrandom'
 
 group :test do
   gem 'rspec'

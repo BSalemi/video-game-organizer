@@ -5,5 +5,6 @@ class CreateUserVideoGames < ActiveRecord::Migration
       t.integer :game_id, foreign_key: {to_table: :video_games}
       
       t.timestamps null: false
-  end
-end
+    end 
+  end 
+end 
