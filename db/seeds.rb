@@ -1,19 +1,19 @@
 require 'pry'
 require 'open-uri'
 require 'nokogiri'
- VideoGame.destroy_all 
- VideoGameSystem.destroy_all
- VideoGameCompany.destroy_all 
+ Game.destroy_all 
+ System.destroy_all
+ Company.destroy_all 
 
 
 
-NINTENDO = VideoGameCompany.create(name: "Nintendo")
-MICROSOFT = VideoGameCompany.create(name: "Microsoft")
-SONY = VideoGameCompany.create(name: "Sony")
-SWITCH = VideoGameSystem.create(name: "Nintendo Switch", company: NINTENDO)
-THREE_DS = VideoGameSystem.create(name: "Nintendo 3DS", company: NINTENDO)
-XBOX_ONE = VideoGameSystem.create(name: "Xbox One", company: MICROSOFT)
-PS4 = VideoGameSystem.create(name: "Playstation 4", company: SONY)
+NINTENDO = Company.create(name: "Nintendo")
+MICROSOFT = Company.create(name: "Microsoft")
+SONY = Company.create(name: "Sony")
+SWITCH = System.create(name: "Nintendo Switch", company: NINTENDO)
+THREE_DS = System.create(name: "Nintendo 3DS", company: NINTENDO)
+XBOX_ONE = System.create(name: "Xbox One", company: MICROSOFT)
+PS4 = System.create(name: "Playstation 4", company: SONY)
 
 NINTENDO_SWITCH = "https://www.gamestop.com/browse/games/nintendo-switch?nav=28-xu0,13ffff2418-1e8-6"
 
@@ -49,7 +49,7 @@ def scrape_switch
       rating = "Not Rated"
     end 
 
-    game = VideoGame.create(title: title, content_rating: rating, company: NINTENDO, system: SWITCH)
+    game = Game.create(title: title, content_rating: rating, company: NINTENDO, system: SWITCH)
   end 
 end 
 
@@ -77,7 +77,7 @@ def scrape_ds
         rating = "Not Rated"
       end 
 
-    VideoGame.create(title: title, content_rating: rating, company: NINTENDO, system: THREE_DS)
+    Game.create(title: title, content_rating: rating, company: NINTENDO, system: THREE_DS)
 
   end 
 end 
@@ -105,7 +105,7 @@ def scrape_xbox
       rating = "Not Rated"
     end 
 
-    VideoGame.create(title: title, content_rating: rating, company: MICROSOFT, system: XBOX_ONE)
+    Game.create(title: title, content_rating: rating, company: MICROSOFT, system: XBOX_ONE)
 
   end 
 end 
@@ -134,7 +134,7 @@ def scrape_playstation
       rating = "Not Rated"
     end 
 
-    VideoGame.create(title: title, content_rating: rating, company: SONY, system: PS4)
+    Game.create(title: title, content_rating: rating, company: SONY, system: PS4)
 
   end 
 end 

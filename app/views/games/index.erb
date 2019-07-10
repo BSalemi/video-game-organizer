@@ -4,7 +4,7 @@
 
 <% @games.each do |game| %>
     <% if game.system.name == "Nintendo Switch" %>
-        <li><a href="/video_games/<%= game.id %>"><%= game.title %> </a></li>
+        <li><a href="/games/<%= game.id %>"><%= game.title %> </a></li>
         <% end %>
     <% end %>
 
@@ -12,7 +12,7 @@
 
 <% @games.each do |game| %>
     <% if game.system.name == "Nintendo 3DS" %>
-        <li> <a href="/video_games/<%= game.id %>"><%= game.title %> </a> </li>
+        <li> <a href="/games/<%= game.id %>"><%= game.title %> </a> </li>
         <% end %>
     <% end %>
 
@@ -20,7 +20,7 @@
 
 <% @games.each do |game| %>
     <% if game.system.name == "Xbox One" %>
-        <li> <a href="/video_games/<%= game.id %>"><%= game.title %> </a></li>
+        <li> <a href="/games/<%= game.id %>"><%= game.title %> </a></li>
         <% end %>
     <% end %>
 
@@ -28,6 +28,6 @@
 
 <% @games.each do |game| %>
     <% if game.system.name == "Playstation 4" %>
-        <li> <a href="/video_games/<%= game.id %>"><%= game.title %> </a></li>
+        <li> <a href="/games/<%= game.id %>"><%= game.title %> </a></li>
         <% end %>
     <% end %>

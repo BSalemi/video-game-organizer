@@ -5,7 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 run ApplicationController
-use VideoGameSystemsController
-use VideoGameCompaniesController
-use VideoGamesController
+use SystemsController
+use CompaniesController
+use GamesController
 use UsersController
