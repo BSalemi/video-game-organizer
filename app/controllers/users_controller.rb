@@ -23,16 +23,53 @@ class UsersController < ApplicationController
     end 
   end 
 
-  # GET: /users
-  get "/users" do
-    erb :"/users/index.html"
-  end
+  get '/users/login' do 
+    if !logged_in? 
+      erb :'/users/login'
+    else 
+      redirect '/users/account'
+    end 
+  end 
 
 
-  # POST: /users
-  post "/users" do
-    redirect "/users"
-  end
+  post '/users/login' do 
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect '/users/account'
+    else 
+      redirect '/users/signup'
+    end 
+  end 
+
+  get '/users/account' do 
+    if !logged_in? 
+      redirect '/users/login'
+    else 
+      erb :'/users/account'
+    end 
+  end 
+
+  get '/users/logout' do 
+    if !logged_in?
+      session.clear 
+      redirect '/users/login'
+    else 
+      redirect '/'
+    end 
+  end 
+
+
+
+
+
+
+
+
+
+
+
+
 
   # GET: /users/5
   get "/users/:id" do
