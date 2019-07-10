@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   configure do 
     enable :sessions
-    set :sessions_secret, 'A3hrk58jQ6ytX7nZ3Twv'
+    set :session_secret, 'A3hrk58jQ6ytX7nZ3Twv'
   end 
 
   get "/users/signup" do 
@@ -14,10 +14,11 @@ class UsersController < ApplicationController
   end 
 
   post "/users/signup" do 
-    if params[:username] == "" || params[:email] == "" || params[:password] == ""
+    if params[:user][:username] == "" || params[:user][:email] == "" || params[:user][:password] == ""
       redirect '/users/signup'
+      
     else 
-      @user = User.create(username: params[:username], email: params[:email], password: params[:password])
+      @user = User.create(params[:user])
       session[:user_id] = @user.id 
       redirect '/users/account'
     end 
@@ -33,8 +34,8 @@ class UsersController < ApplicationController
 
 
   post '/users/login' do 
-    user = User.find_by(username: params[:username])
-    if user && user.authenticate(params[:password])
+    user = User.find_by(username: params[:user][:username])
+    if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
       redirect '/users/account'
     else 
@@ -43,6 +44,7 @@ class UsersController < ApplicationController
   end 
 
   get '/users/account' do 
+    binding.pry
     if !logged_in? 
       redirect '/users/login'
     else 

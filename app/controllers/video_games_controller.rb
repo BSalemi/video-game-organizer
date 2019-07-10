@@ -2,7 +2,8 @@ class VideoGamesController < ApplicationController
 
   # GET: /video_games
   get "/video_games" do
-    erb :"/video_games/index.html"
+    @games = VideoGame.all
+    erb :"/video_games/index"
   end
 
   # GET: /video_games/new
@@ -17,7 +18,8 @@ class VideoGamesController < ApplicationController
 
   # GET: /video_games/5
   get "/video_games/:id" do
-    erb :"/video_games/show.html"
+    @game = VideoGame.find(params[:id])
+    erb :"/video_games/show"
   end
 
   # GET: /video_games/5/edit

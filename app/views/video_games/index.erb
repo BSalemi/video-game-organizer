@@ -1,0 +1,33 @@
+<h1>Games' List!</h1>
+
+<h3> Nintendo Switch Games </h3>
+
+<% @games.each do |game| %>
+    <% if game.system.name == "Nintendo Switch" %>
+        <li><a href="/video_games/<%= game.id %>"><%= game.title %> </a></li>
+        <% end %>
+    <% end %>
+
+<h3> Nintendo 3DS Games </h3> 
+
+<% @games.each do |game| %>
+    <% if game.system.name == "Nintendo 3DS" %>
+        <li> <a href="/video_games/<%= game.id %>"><%= game.title %> </a> </li>
+        <% end %>
+    <% end %>
+
+<h3> Xbox One Games </h3>
+
+<% @games.each do |game| %>
+    <% if game.system.name == "Xbox One" %>
+        <li> <a href="/video_games/<%= game.id %>"><%= game.title %> </a></li>
+        <% end %>
+    <% end %>
+
+<h3> Playstation 4 Games </h3>
+
+<% @games.each do |game| %>
+    <% if game.system.name == "Playstation 4" %>
+        <li> <a href="/video_games/<%= game.id %>"><%= game.title %> </a></li>
+        <% end %>
+    <% end %>

@@ -2,22 +2,15 @@ class VideoGameCompaniesController < ApplicationController
 
   # GET: /video_game_companies
   get "/video_game_companies" do
-    erb :"/video_game_companies/index.html"
+    @companies = VideoGameCompany.all
+    erb :"/video_game_companies/index"
   end
 
-  # GET: /video_game_companies/new
-  get "/video_game_companies/new" do
-    erb :"/video_game_companies/new.html"
-  end
-
-  # POST: /video_game_companies
-  post "/video_game_companies" do
-    redirect "/video_game_companies"
-  end
-
+  
   # GET: /video_game_companies/5
   get "/video_game_companies/:id" do
-    erb :"/video_game_companies/show.html"
+    @company = VideoGameCompany.find(params[:id])
+    erb :"/video_game_companies/show"
   end
 
   # GET: /video_game_companies/5/edit

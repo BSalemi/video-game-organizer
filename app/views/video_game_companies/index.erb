@@ -1,0 +1,4 @@
+<h1>Video Game Companies</h1>
+<% @companies.each do |company| %>
+    <h3><a href="/video_game_companies/<%= company.id %>"><%=company.name %> </a> </h3> 
+    <% end %> 
