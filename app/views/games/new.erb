@@ -1,1 +1,22 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>Create a new Video Game!</h1>
+<form method="post" action="/games"> 
+<h4><label for="title"> Title: </label></h4>
+<input type="text" name="game[title]" value=""><br><br>
+<h4><label for="content_rating"> Select Content Rating: </label></h4>
+<input type="radio" name="game[content_rating]" value="game[content_rating]">
+<label for="everyone"> Everyone </label>
+<input type="radio" name="game[content_rating]" value="game[content_rating]">
+<label for="everyone10"> Everyone 10 & Up </label>
+<input type="radio" name="game[content_rating]" value="game[content_rating]">
+<label for="teen"> Teen </label>
+<input type="radio" name="game[content_rating]" value="game[content_rating]">
+<label for="mature"> Mature </label> <br><br>
+<h4><label for="system">Select a System: </label></h4>
+<% @systems.each do |system| %>
+<input type="radio" name="game[system]" value="game[system]"> <%=system.name%></input>
+<% end %><br><br>
+<h4><label for="company">Select a Company: </label></h4>
+<% @companies.each do |company| %>
+<input type="radio" name="game[company]" value="game[company]"> <%=company.name%></input>
+<% end %><br><br>
+</form>

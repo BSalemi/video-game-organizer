@@ -1,25 +1,47 @@
 class GamesController < ApplicationController
+ 
 
-  # GET: /games
+ 
   get "/games" do
-    @games = Game.all
-    erb :"/games/index"
+    if logged_in? 
+      @games = Game.all
+      erb :"/games/index"
+    else 
+      redirect '/users/login'
+    end 
   end
 
-  # GET: /games/new
+
   get "/games/new" do
-    erb :"/games/new.html"
-  end
+    # if logged_in? 
+      @systems = System.all
+      @companies = Company.all 
+      erb :"/games/new"
+  end 
+    # else 
+    #   redirect '/users/login'
+    # end 
+
 
   # POST: /games
   post "/games" do
-    redirect "/games"
+    @game = Game.new(params[:game])
+    if params[:games][:title] == "" || params[:games][:content_rating] == "" || params[:games][:system] == "" || params[:games][:company] == ""
+      @game.save 
+      redirect "/games/#{@game.id}/"
+    else 
+     redirect '/games/new'
+    end 
   end
 
   # GET: /games/5
   get "/games/:id" do
-    @game = Game.find(params[:id])
-    erb :"/games/show"
+    if logged_in? 
+      @game = Game.find(params[:id])
+      erb :"/games/show"
+    else 
+      redirect '/users/login'
+    end 
   end
 
   # GET: /games/5/edit

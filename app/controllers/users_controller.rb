@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
   
-  configure do 
-    enable :sessions
-    set :session_secret, 'A3hrk58jQ6ytX7nZ3Twv'
-  end 
 
   get "/users/signup" do 
     if !logged_in?  
@@ -44,7 +40,6 @@ class UsersController < ApplicationController
   end 
 
   get '/users/account' do 
-    binding.pry
     if !logged_in? 
       redirect '/users/login'
     else 

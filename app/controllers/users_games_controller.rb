@@ -1,0 +1,3 @@
+class UsersGamesController < ApplicationController
+
+end 
