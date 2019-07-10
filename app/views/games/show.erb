@@ -3,7 +3,7 @@
 <h4>Content Rating:</h4> <%=@game.content_rating%><br><br>
 <h4>Game System:</h4><a href="/systems/<%= @game.system_id %>"> <%=@game.system.name%></a><br><br>
 <h4>Company:</h4> <a href="/companies/<%= @game.company_id %>"><%=@game.company.name%></a><br><br>
-<h4>Number of Users who play <%=@game.title%>: <%= @game.users.size %></h4> 
+<h4>Number of Users who play <%=@game.title%>: </h4> <%= @game.users.size %> 
 <br>
 <br>
 <a href="/add_game"> Add Game to Your Collection </a><br><br>

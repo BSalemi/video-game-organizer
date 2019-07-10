@@ -1,4 +1,51 @@
 <h1>Welcome <%=current_user.username%>!</h1>
 
-<h2>Here are your list of games!</h2>
+<h2>Here is your list of games!</h2>
 
+<h3> Nintendo Switch </h3>
+
+<% if current_user.games.none?{|game| game.system.name == "Nintendo Switch"} %>
+    <%= "You don't own any Switch titles!" %>
+<% elsif %>
+    <% current_user.games.each do |game| %>
+        <% if game.system.name == "Nintendo Switch" %>
+            <li><a href="/games/<%=game.id%>"><%= game.title %></a></li>
+    <% end %>
+<% end %>
+<% end %>
+
+<h3> Nintendo 3DS </h3>
+
+<% if current_user.games.none?{|game| game.system.name == "Nintendo 3DS"} %>
+        <%= "You don't own any 3DS titles!" %>
+<% elsif %>
+        <% current_user.games.each do |game| %>
+            <% if game.system.name == "Nintendo 3DS" %>
+                <li><a href="/games/<%=game.id%>"><%= game.title %></a></li>
+            <% end %>
+    <% end %>
+    <% end %>
+
+<h3> Xbox One </h3>
+
+<% if current_user.games.none?{|game| game.system.name == "Xbox One"} %>
+    <%= "You don't own any Xbox One titles!" %>
+<% elsif %>
+    <% current_user.games.each do |game| %>
+        <% if game.system.name == "Xbox One" %>
+            <li><a href="/games/<%=game.id%>"><%= game.title %></a></li>
+        <% end %>
+    <% end %>
+    <% end %>
+
+ <h3> Playstation 4 </h3>
+
+<% if current_user.games.none?{|game| game.system.name == "Playstation 4"} %>
+    <%= "You don't own any Playstation 4 titles!" %>
+<% elsif %>
+    <% current_user.games.each do |game| %>
+        <% if game.system.name == "Playstation 4" %>
+            <li><a href="/games/<%=game.id%>"><%= game.title %></a></li>
+        <% end %>
+    <% end %>
+    <% end %>
