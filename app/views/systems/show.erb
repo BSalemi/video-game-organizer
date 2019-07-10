@@ -1,0 +1,9 @@
+<h1><%= @system.name %></h1>
+
+<% @system.games.each do |game| %> 
+    <li><a href="/games/<%=game.id%>"><%=game.title%></a></li>
+<% end %>
+
+<br>
+<br>
+<a href="/systems"> Go Back to the Systems Index </a> 

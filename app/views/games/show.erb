@@ -1,8 +1,8 @@
 <h1><%=@game.title%></h1>
 
 <h4>Content Rating:</h4> <%=@game.content_rating%><br><br>
-<h4>Game System:</h4> <%=@game.system.name%><br><br>
-<h4>Company:</h4> <%=@game.company.name%><br><br>
+<h4>Game System:</h4><a href="/systems/<%= @game.system_id %>"> <%=@game.system.name%></a><br><br>
+<h4>Company:</h4> <a href="/companies/<%= @game.company_id %>"><%=@game.company.name%></a><br><br>
 <h4>Number of Users who play <%=@game.title%>: <%= @game.users.size %></h4> 
 <br>
 <a href="/games">Return to the Games index</a>
