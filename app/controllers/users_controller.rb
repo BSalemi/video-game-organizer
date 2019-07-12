@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
+ 
   
   patch '/users/account' do 
     @user = current_user
     @user.username = params[:user][:username]
     @user.email = params[:user][:email]
     @user.password = params[:user][:password]
-    @user.save 
-    redirect '/users/account'
+    if @user.valid?
+        @user.save 
+      redirect '/users/account'
+    else 
+      erb :'/users/update_failure'
+    end
   end 
 
   get "/users/signup" do 
@@ -18,12 +23,13 @@ class UsersController < ApplicationController
   end 
 
   post "/users/signup" do 
-    if params[:user][:username] == "" || params[:user][:email] == "" || params[:user][:password] == ""
-      erb :'/users/signup_failure'
-    else 
-      @user = User.create(params[:user])
+    @user = User.new(params[:user])
+    if @user.valid? 
+      @user.save 
       session[:user_id] = @user.id 
       redirect '/users/account'
+   else 
+    erb :'/users/signup_failure'
     end 
   end 
 
