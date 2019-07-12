@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   post "/users/signup" do 
     if params[:user][:username] == "" || params[:user][:email] == "" || params[:user][:password] == ""
-      redirect '/users/signup' 
+      erb :'/users/signup_failure'
     else 
       @user = User.create(params[:user])
       session[:user_id] = @user.id 
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect '/users/account'
     else 
-      redirect '/users/signup'
+      erb :'/users/login_failure'
     end 
   end 
 
@@ -47,9 +47,9 @@ class UsersController < ApplicationController
   end 
 
   get '/users/logout' do 
-    if !logged_in?
+    if logged_in?
       session.clear 
-      redirect '/users/login'
+      redirect '/'
     else 
       redirect '/'
     end 
@@ -67,10 +67,7 @@ class UsersController < ApplicationController
 
 
 
-  # GET: /users/5
-  get "/users/:id" do
-    erb :"/users/show.html"
-  end
+
 
   # GET: /users/5/edit
   get "/users/:id/edit" do
