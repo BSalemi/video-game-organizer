@@ -14,14 +14,14 @@ class GamesController < ApplicationController
 
 
   get "/games/new" do
-    # if logged_in? 
+    if logged_in? 
       @systems = System.all
       @companies = Company.all 
       erb :"/games/new"
+    else 
+      redirect '/users/login'
+    end 
   end 
-    # else 
-    #   redirect '/users/login'
-    # end 
 
 
 
@@ -37,23 +37,39 @@ class GamesController < ApplicationController
 
 
   get "/games/mature" do 
-    @mature = Game.all.select {|game| game.content_rating == "Mature"}
-    erb :"/games/mature"
+    if logged_in?
+     @mature = Game.all.select {|game| game.content_rating == "Mature"}
+      erb :"/games/mature"
+    else 
+      redirect '/users/login'
+    end 
   end 
 
   get "/games/teen" do
-    @teen = Game.all.select {|game| game.content_rating == "Teen"}
-    erb :"/games/teen"
+    if logged_in?
+      @teen = Game.all.select {|game| game.content_rating == "Teen"}
+      erb :"/games/teen"
+    else 
+    redirect '/users/login'
+    end 
   end 
 
   get "/games/everyone10&up" do 
-    @e10 = Game.all.select {|game| game.content_rating == "Everyone 10 & Up"}
-    erb :"/games/everyone10"
+    if logged_in?
+      @e10 = Game.all.select {|game| game.content_rating == "Everyone 10 & Up"}
+      erb :"/games/everyone10"
+    else 
+      redirect '/users/login'
+    end 
   end 
 
   get "/games/everyone" do 
-    @everyone = Game.all.select {|game| game.content_rating == "Everyone"}
-    erb :"/games/everyone"
+    if logged_in?
+      @everyone = Game.all.select {|game| game.content_rating == "Everyone"}
+      erb :"/games/everyone"
+    else 
+      redirect '/users/login'
+    end 
   end 
 
   get "/games/:id" do

@@ -1,6 +1,5 @@
 class CompaniesController < ApplicationController
 
-  # GET: /video_game_companies
   get "/video_game_companies" do
     if logged_in? 
       @companies = Company.all
@@ -10,7 +9,6 @@ class CompaniesController < ApplicationController
     end 
   end
   
-  # GET: /companies/5
   get "/companies/:id" do
     if logged_in? 
       @company = Company.find(params[:id])

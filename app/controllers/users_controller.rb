@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
   
+  patch '/users/account' do 
+    @user = current_user
+    @user.username = params[:user][:username]
+    @user.email = params[:user][:email]
+    @user.password = params[:user][:password]
+    @user.save 
+    redirect '/users/account'
+  end 
 
   get "/users/signup" do 
     if !logged_in?  
@@ -46,6 +54,15 @@ class UsersController < ApplicationController
     end 
   end 
 
+  get '/users/account/edit' do 
+    @user = current_user 
+    if logged_in?
+      erb :'/users/edit'
+    else 
+      redirect '/users/login'
+    end 
+  end 
+
   get '/users/logout' do 
     if logged_in?
       session.clear 
@@ -55,32 +72,4 @@ class UsersController < ApplicationController
     end 
   end 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  # GET: /users/5/edit
-  get "/users/:id/edit" do
-    erb :"/users/edit.html"
-  end
-
-  # PATCH: /users/5
-  patch "/users/:id" do
-    redirect "/users/:id"
-  end
-
-  # DELETE: /users/5/delete
-  delete "/users/:id/delete" do
-    redirect "/users"
-  end
 end

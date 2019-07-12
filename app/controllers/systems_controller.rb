@@ -1,6 +1,6 @@
 class SystemsController < ApplicationController
 
-  # GET: /systems
+ 
   get "/systems" do
     if logged_in?
       @systems = System.all 
