@@ -1,18 +1,6 @@
 class UsersController < ApplicationController
  
   
-  patch '/users/account' do 
-    @user = current_user
-    @user.username = params[:user][:username]
-    @user.email = params[:user][:email]
-    @user.password = params[:user][:password]
-    if @user.valid?
-        @user.save 
-      redirect '/users/account'
-    else 
-      erb :'/users/update_failure'
-    end
-  end 
 
   get "/users/signup" do 
     if !logged_in?  
@@ -67,6 +55,33 @@ class UsersController < ApplicationController
     else 
       redirect '/users/login'
     end 
+  end 
+
+  patch '/users/account' do 
+    @user = current_user
+    @user.username = params[:user][:username]
+    @user.email = params[:user][:email]
+    @user.password = params[:user][:password]
+    if @user.valid?
+        @user.save 
+      redirect '/users/account'
+    else 
+      erb :'/users/update_failure'
+    end
+  end 
+
+  get '/users/account/delete' do 
+    if logged_in?
+      erb :'/users/delete'
+    else 
+      redirect '/users/login'
+    end 
+  end 
+
+  delete '/users/account/delete' do 
+     @user = current_user
+     @user.delete 
+     redirect '/users/signup'
   end 
 
   get '/users/logout' do 
