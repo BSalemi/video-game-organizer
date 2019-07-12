@@ -27,11 +27,11 @@ class GamesController < ApplicationController
 
   post "/games" do
     @game = Game.new(params[:game])
-    if params[:game][:title] == nil || params[:game][:content_rating] == nil || params[:game][:system_id] == nil|| params[:game][:company_id] == nil
-        redirect '/games/new'
+    if @game.valid? 
+       @game.save 
+        redirect "/games/#{@game.id}"  
     else 
-     @game.save 
-     redirect "/games/#{@game.id}"
+      erb :'/games/failure'
     end 
   end
 
