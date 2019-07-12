@@ -5,6 +5,7 @@ class GamesController < ApplicationController
   get "/games" do
     if logged_in? 
       @games = Game.all
+      
       erb :"/games/index"
     else 
       redirect '/users/login'
@@ -23,20 +24,16 @@ class GamesController < ApplicationController
     # end 
 
 
-  # POST: /games
+
   post "/games" do
     @game = Game.new(params[:game])
-    if params[:games][:title] == "" || params[:games][:content_rating] == "" || params[:games][:system] == "" || params[:games][:company] == ""
-      @game.save 
-      redirect "/games/#{@game.id}/"
+    if params[:game][:title] == nil || params[:game][:content_rating] == nil || params[:game][:system_id] == nil|| params[:game][:company_id] == nil
+        redirect '/games/new'
     else 
-     redirect '/games/new'
+     @game.save 
+     redirect "/games/#{@game.id}"
     end 
   end
-
-  # GET: /games/5
- 
-
 
 
   get "/games/mature" do 
