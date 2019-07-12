@@ -35,6 +35,30 @@ class GamesController < ApplicationController
   end
 
   # GET: /games/5
+ 
+
+
+
+  get "/games/mature" do 
+    @mature = Game.all.select {|game| game.content_rating == "Mature"}
+    erb :"/games/mature"
+  end 
+
+  get "/games/teen" do
+    @teen = Game.all.select {|game| game.content_rating == "Teen"}
+    erb :"/games/teen"
+  end 
+
+  get "/games/everyone10&up" do 
+    @e10 = Game.all.select {|game| game.content_rating == "Everyone 10 & Up"}
+    erb :"/games/everyone10"
+  end 
+
+  get "/games/everyone" do 
+    @everyone = Game.all.select {|game| game.content_rating == "Everyone"}
+    erb :"/games/everyone"
+  end 
+
   get "/games/:id" do
     if logged_in? 
       @game = Game.find(params[:id])
@@ -44,18 +68,4 @@ class GamesController < ApplicationController
     end 
   end
 
-  # GET: /games/5/edit
-  get "/games/:id/edit" do
-    erb :"/games/edit.html"
-  end
-
-  # PATCH: /games/5
-  patch "/games/:id" do
-    redirect "/games/:id"
-  end
-
-  # DELETE: /games/5/delete
-  delete "/games/:id/delete" do
-    redirect "/games"
-  end
 end
