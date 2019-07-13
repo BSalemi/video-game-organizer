@@ -1,1 +1,11 @@
 <h1><%= @company.name %> </h1>
+
+<% @games.each do |game| %>
+    <% if game.company.name == @company.name %>
+        <h5><li><a href="/games/<%= game.id %>"><%= game.title %> </a></li></h5>
+        <% end %>
+    <% end %>
+<br>
+<a href="/companies"> Go back </a>
+<br><br>
+<a href="/games"> Games Index </a>
