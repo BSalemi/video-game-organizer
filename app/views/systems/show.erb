@@ -1,7 +1,7 @@
 <h1><%= @system.name %></h1>
-
+<br>
 <% @system.games.each do |game| %> 
-   <a href="/games/<%=game.id%>"><%=game.title%></a></div>
+   <li><a href="/games/<%=game.id%>"><%=game.title%></a></li>
 <% end %>
 
 <br>

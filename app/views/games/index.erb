@@ -1,39 +1,50 @@
 <h1>Games Index</h1>
+<br>
+<br>
+<div class="switchdrop"> 
+<button class="dropbtn_1">Nintendo Switch Games </button>
 
-<h3> Nintendo Switch Games </h3>
-
-<% @games.each do |game| %>
+<div class="switch"><% @games.each do |game| %>
     <% if game.system.name == "Nintendo Switch" %>
-        <li><a href="/games/<%= game.id %>"><%= game.title %> </a></li>
+        <a href="/games/<%= game.id %>"><%= game.title %> </a>
         <% end %>
-    <% end %>
+    <% end %></div> </div>
+<br>
+<br>
+<br>
 
-<h3> Nintendo 3DS Games </h3> 
+<div class="three_dsdrop"> 
+<button class="dropbtn_2">Nintendo 3DS Games </button>
 
-<% @games.each do |game| %>
+<div class="three_ds"><% @games.each do |game| %>
     <% if game.system.name == "Nintendo 3DS" %>
-        <li> <a href="/games/<%= game.id %>"><%= game.title %> </a> </li>
+        <a href="/games/<%= game.id %>"><%= game.title %> </a>
         <% end %>
-    <% end %>
+    <% end %></div></div>
+<br>
+<br>
 
-<h3> Xbox One Games </h3>
+<div class="xbox_onedrop"> 
+<button class="dropbtn_3">Xbox One Games </button>
 
-<% @games.each do |game| %>
+<div class="xbox_one"><% @games.each do |game| %>
     <% if game.system.name == "Xbox One" %>
-        <li> <a href="/games/<%= game.id %>"><%= game.title %> </a></li>
+        <a href="/games/<%= game.id %>"><%= game.title %> </a>
         <% end %>
-    <% end %>
+    <% end %></div></div>
+<br>
+<br>
+<div class="ps_fourdrop">
+<button class="dropbtn_4"> Playstation 4 Games </button>
 
-<h3> Playstation 4 Games </h3>
-
-<% @games.each do |game| %>
+<div class="ps_four"><% @games.each do |game| %>
     <% if game.system.name == "Playstation 4" %>
-        <li> <a href="/games/<%= game.id %>"><%= game.title %> </a></li>
+        <a href="/games/<%= game.id %>"><%= game.title %> </a>
         <% end %>
-    <% end %>
-
+    <% end %></div></div>
+    <br>
     <br>
    
-    <p class="create"><a href="/games/new"> Add a Game to the Database </a></p> 
-    <p class="gohome"><a href="/users/account"> Go back to your Profile </a></p>
+    <div class="create"><a href="/games/new"> Add a Game to the Database </a></div> 
+    <div class="gohome"><a href="/users/account"> Go back to your Profile </a></div>
    

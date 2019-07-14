@@ -1,4 +1,5 @@
 <h1>Edit your Account, <%=current_user.username%>!</h1>
+<br>
 <form action="/users/account" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <label for="username"> Username: </label>
@@ -6,7 +7,7 @@
   <label for="email"> Email Address: </label>
   <input type="text" name="user[email]" value="<%=current_user.email%>"><br>
   <label for="password"> Password: </label>
-  <input type="password" name="user[password]" value="<%=current_user.password%>"<br>
+  <input type="password" name="user[password]" value="<%=current_user.password%>"<br><br><br>
   <input type="submit" value="Update your Account!">
 </form>
 <br>

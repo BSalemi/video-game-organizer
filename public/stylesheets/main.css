@@ -30,6 +30,8 @@
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+    position: relative;
+    max-height:500px;
   }
 
   h1 {
@@ -37,6 +39,7 @@
     line-height: 54px;
     text-align: center;
     background: lightgrey;
+    border: black solid 1px;
   }
 
   h2 {
@@ -142,13 +145,203 @@
 }
 
 .create {
-  
-  text-align: left;
+  bottom: -200px;
+  float: left;
 
 }
-
+.oops{
+  font-weight: bold;
+}
 .gohome {
- text-align: right;
+ bottom: -200px;
+ float: right;
+}
 
-  
+.dropbtn_1 {
+  background-color: lightgray;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: black solid 1px;
+  cursor: pointer;
+}
+
+.switchdrop {
+  position: relative;
+  display: inline-block;
+}
+
+
+.switchdrop:hover .switch {
+  display: block;
+}
+
+.switchdrop:hover .dropbtn_1{
+  background-color:gray;
+}
+.switch {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.switch a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  border: black solid 1px;
+  font-size: 75%;
+}
+
+.switch a:hover{
+  background-color: lightgray;
+}
+
+.dropbtn_2 {
+  display: flex;
+  background-color: lightgray;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: black solid 1px;
+  cursor: pointer;
+}
+
+.three_dsdrop {
+  left: 267px;
+  top: -88px;
+  position: relative;
+  display: inline-block;
+}
+
+.three_dsdrop:hover .three_ds {
+  display: block;
+}
+
+.three_dsdrop:hover .dropbtn_2{
+  background-color:gray;
+}
+
+.three_ds {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.three_ds a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  border: black solid 1px;
+  font-size: 75%;
+}
+
+.three_ds a:hover{
+  background-color: lightgray;
+}
+
+.dropbtn_3 {
+  background-color: lightgray;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: black solid 1px;
+  cursor: pointer;
+}
+
+.xbox_onedrop {
+  left: 520px;
+  top: -158px;
+  position: relative;
+  display: inline-block;
+}
+
+.xbox_onedrop:hover .xbox_one {
+  display: block;
+}
+
+.xbox_onedrop:hover .dropbtn_3{
+  background-color:gray;
+}
+
+.xbox_one {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.xbox_one a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  border: black solid 1px;
+  font-size: 75%;
+}
+
+.xbox_one a:hover{
+  background-color: lightgray;
+}
+
+.dropbtn_4 {
+  float: right;
+  background-color: lightgray;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: black solid 1px;
+  cursor: pointer;
+}
+
+.ps_fourdrop {
+  left: 736px;
+  top: -228px;
+  position: relative;
+  display: inline-block;
+}
+
+.ps_fourdrop:hover .ps_four {
+  display: block;
+}
+
+.ps_fourdrop:hover .dropbtn_4{
+  background-color:gray;
+}
+
+.ps_four {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.ps_four a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  border: black solid 1px;
+  font-size: 75%
+}
+
+.ps_four a:hover{
+  background-color: lightgray;
 }
