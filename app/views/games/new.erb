@@ -19,6 +19,7 @@
 <% @companies.each do |company| %>
 <input type="radio" name="game[company_id]" value="<%= company.id %>"> <%=company.name%></input>
 <% end %><br><br>
+<p class="warning_1"> Please confirm details are correct. You cannot edit or delete a game once added to the database.</p>
 <input type="submit" value="Add Game to Database"> 
 </form>
 <br>

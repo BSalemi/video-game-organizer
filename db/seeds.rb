@@ -14,6 +14,24 @@ SWITCH = System.create(name: "Nintendo Switch", company: NINTENDO)
 THREE_DS = System.create(name: "Nintendo 3DS", company: NINTENDO)
 XBOX_ONE = System.create(name: "Xbox One", company: MICROSOFT)
 PS4 = System.create(name: "Playstation 4", company: SONY)
+NIN = "https://hallucinationrain.files.wordpress.com/2014/03/nintendo-logo.jpg"
+MIC = "http://cdn3.sbnation.com/entry_photo_images/5142552/mslogo_large_verge_medium_landscape.jpg"
+SON = "http://logok.org/wp-content/uploads/2014/07/Playstation-logo-colour.png"
+SWI = "https://assets.vg247.com/current/2017/01/nintendo_switch_new_6.jpg"
+THREE ="http://brain-images.cdn.dixons.com/4/1/10119514/u_10119514.jpg"
+XBOX = "https://www.gamessystems.co.uk/ekmps/shops/gamessystems/images/xbox-one-500gb-console-4220-p.jpg"
+PS = "http://g-ecx.images-amazon.com/images/G/01/aplus/detail-page/PS4_lg.jpg"
+
+NINTENDO.image_url = NIN
+MICROSOFT.image_url = MIC
+SONY.image_url = SON
+SWITCH.image_url = SWI 
+THREE_DS.image_url = THREE 
+XBOX_ONE.image_url = XBOX
+PS4.image_url = PS 
+
+
+
 
 NINTENDO_SWITCH = "https://www.gamestop.com/browse/games/nintendo-switch?nav=28-xu0,13ffff2418-1e8-6"
 

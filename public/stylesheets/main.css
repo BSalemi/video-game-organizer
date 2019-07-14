@@ -13,7 +13,9 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color:lightgrey;
+    background-image: url("http://cdn.segmentnext.com/wp-content/uploads/2016/01/Video-Games-Controllers.jpg");
+    background-size: cover;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -33,6 +35,8 @@
   h1 {
     font-size: 36px;
     line-height: 54px;
+    text-align: center;
+    background: lightgrey;
   }
 
   h2 {
@@ -106,6 +110,7 @@
   h1 {
     font-size: 24px;
     line-height: 36px;
+    text-align: center
   }
 
   h2 {
@@ -113,12 +118,37 @@
     line-height: 24px;
   }
 }
-
-.form {
-  color: red
+.col {  
+  box-sizing: border-box;
+    display: inline-block;
+    width: 32%;
+    vertical-align: top;
+    border: 1px solid;
+    padding: 10px;
 }
 
-.edit {
-  border-block-start: #333;
+.warning {
+  padding: 5px;
+  width: 835px;
+  border: 2px dashed red;
+  text-align: center
 }
 
+.warning_1{
+  opacity: 50%;
+  padding: 5px;
+  width: 700px;
+  border: 2px dashed red;
+}
+
+.create {
+  
+  text-align: left;
+
+}
+
+.gohome {
+ text-align: right;
+
+  
+}
