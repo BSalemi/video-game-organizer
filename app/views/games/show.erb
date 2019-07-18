@@ -2,12 +2,14 @@
 <br>
 <% rating = @game.content_rating %>
 
-<h4>Content Rating:</h4> <a href="/games/<%= rating.downcase.gsub(" ","") %>"><%=@game.content_rating%></a><br><br>
+<h4>Content Rating:</h4> <a href="/games/rating/<%= rating.downcase.gsub(" ","_") %>"><%=@game.content_rating%></a><br><br>
 <h4>Game System:</h4><a href="/systems/<%= @game.system_id %>"> <%=@game.system.name%></a><br><br>
 <h4>Company:</h4> <a href="/companies/<%= @game.company_id %>"><%=@game.company.name%></a><br><br>
 <h4>Number of Users who play <%=@game.title%>: </h4> <%= @game.users.size %> 
 <br>
 <br>
 <a href="/add_game/<%= @game.id %>"> Add Game to Your Collection </a><br><br>
+
+
 <a href="/games">Return to the Games Index</a>
 

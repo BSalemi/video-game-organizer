@@ -35,46 +35,20 @@ class GamesController < ApplicationController
     end 
   end
 
-
-  get "/games/mature" do 
-    if logged_in?
-     @mature = Game.all.select {|game| game.content_rating == "Mature"}
-      erb :"/games/mature"
+  get "/games/rating/:rating" do 
+    if logged_in? 
+      @formatted = params[:rating].split("_").map{|element| element.capitalize}.join(" ")
+      @games = Game.all.select{|game| game.content_rating == @formatted}
+      erb :"/games/rating"
     else 
       redirect '/users/login'
-    end 
-  end 
-
-  get "/games/teen" do
-    if logged_in?
-      @teen = Game.all.select {|game| game.content_rating == "Teen"}
-      erb :"/games/teen"
-    else 
-    redirect '/users/login'
-    end 
-  end 
-
-  get "/games/everyone10&up" do 
-    if logged_in?
-      @e10 = Game.all.select {|game| game.content_rating == "Everyone 10 & Up"}
-      erb :"/games/everyone10"
-    else 
-      redirect '/users/login'
-    end 
-  end 
-
-  get "/games/everyone" do 
-    if logged_in?
-      @everyone = Game.all.select {|game| game.content_rating == "Everyone"}
-      erb :"/games/everyone"
-    else 
-      redirect '/users/login'
-    end 
+    end
   end 
 
   get "/games/:id" do
     if logged_in? 
       @game = Game.find(params[:id])
+      @user_games = current_user.games 
       erb :"/games/show"
     else 
       redirect '/users/login'

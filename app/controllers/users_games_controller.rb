@@ -6,4 +6,3 @@ get '/add_game/:id' do
     redirect '/users/account'
 end 
 
-end 

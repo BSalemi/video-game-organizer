@@ -1,0 +1,7 @@
+<h1> <%= @formatted %> </h1>
+<div class="rating"><% @games.each do |game| %>
+    <h4><li><a href="/games/<%= game.id %>"> <%= game.title %> </li></a></h4>
+    <div class="system"><a href="/systems/<%= game.system_id%>"><%= game.system.name %></a></h6></div>
+    <% end %> 
+    <br>
+    <a href="/games"> Go back </a></div>

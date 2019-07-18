@@ -1,8 +1,0 @@
-<h1> Everyone 10 & Up </h1>
-<br>
-<% @e10.each do |game| %>
-    <h4><li><a href="/games/<%= game.id %>"> <%= game.title %> </li></a></h4>
-    <h6><a href="/systems/<%= game.system_id%>"><%= game.system.name %></a></h6>
-    <% end %> 
-    <br>
-    <a href="/games"> Go back </a>

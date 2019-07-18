@@ -345,3 +345,11 @@
 .ps_four a:hover{
   background-color: lightgray;
 }
+
+.rating{
+  font-size: 70%;
+}
+
+.system{
+  font-size: 75%
+}
