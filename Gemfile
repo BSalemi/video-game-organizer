@@ -11,7 +11,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.10.4'
 gem 'sysrandom'
 gem 'sinatra-flash'
 
