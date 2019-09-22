@@ -1,16 +1,32 @@
-Welcome to the Video Game Organizer Sinatra app!
+# Video Game Organizer
 
-This app allows users to keep track of the video games they own as well as add new video games to the database.
+## Installation 
 
-To use, first run 'bundle install' to make sure all necessary gems are installed.
+After cloning the repo, install the dependencies by executing the below command in your terminal:
 
-Once bundle is complete, run 'shotgun' to activate your local server. Sign up using an email address and creating a valid username and password. Once created, follow the links to Edit your Account, Add a Game to the Database, or view the Games that are already in the Database. 
+$ bundle install
 
-While navigating, if you come to a page of a Game that you own, click the "Add Game to Your Collection" link to add the game to your profile. Continue to follow the links to explore the rest of the page and find games sorted by system, company, and content rating. 
+Launch the system using the below command in your terminal and navigating to your specified local host URL:
 
-When you're finished, simply click the Log Out link to log out of the app. Enjoy!
+$ shotgun
+
+## Usage 
+
+Upon launching the application, the user will be required to sign up with a valid email, username, and password. 
+
+Following a successful user sign-up or log-in, the user will arrive at their profile page.
+
+From here, the user may:
+  - Search video games on the database and add the games they own to their profile.
+  - Add new games to the database.
+  - Edit their account information.
+  - Log out or delete their account entirely.
 
 
+## Contributing 
 
-LICENSE:
-https://opensource.org/licenses/MIT
+Bug reports and pull requests are welcome on GitHub at https://github.com/BSalemi/video-game-organizer. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+
+## License 
+
+The system is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
