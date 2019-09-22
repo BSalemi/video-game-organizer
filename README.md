@@ -1,6 +1,6 @@
 # Video Game Organizer
 
-Blog post: https://bsalemi.github.io/project_number_two_sinatra_video_game_organizer
+[Blog Post](https://bsalemi.github.io/project_number_two_sinatra_video_game_organizer)
 
 ## Installation 
 
