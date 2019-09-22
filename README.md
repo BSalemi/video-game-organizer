@@ -1,5 +1,7 @@
 # Video Game Organizer
 
+Blog post: https://bsalemi.github.io/project_number_two_sinatra_video_game_organizer
+
 ## Installation 
 
 After cloning the repo, install the dependencies by executing the below command in your terminal:
