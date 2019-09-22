@@ -2,6 +2,8 @@
 
 [Blog Post](https://bsalemi.github.io/project_number_two_sinatra_video_game_organizer)
 
+[![Video Game Organizer Screen Grab](https://i.imgur.com/KnQkG1w.jpg)](https://vimeo.com/348086429)
+
 ## Installation 
 
 After cloning the repo, install the dependencies by executing the below command in your terminal:
